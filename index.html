@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>File Structure</title>
+<style>
+    ul { list-style-type: none; }
+    .folder { cursor: pointer; }
+    .file { margin-left: 20px; }
+    .hidden { display: none; }
+</style>
+</head>
+<body>
+<h2>File Structure</h2>
+<ul>
+    <li class="folder">bonafide_audio
+        <ul class="hidden">
+            <li class="file">sample_audio.wav</li>
+        </ul>
+    </li>
+    <li class="folder">bonafide_video
+        <ul class="hidden">
+            <li class="file">sample_video.mp4</li>
+        </ul>
+    </li>
+    <li class="folder">kling_fake_video_fake_audio
+        <ul class="hidden">
+            <li class="folder">kling_audiocraft
+                <ul class="hidden">
+                    <li class="file">sample_video.mp4</li>
+                </ul>
+            </li>
+            <li class="folder">kling_audioldm1
+                <ul class="hidden">
+                    <li class="file">sample_video.mp4</li>
+                </ul>
+            </li>
+            <li class="folder">kling_audioldm2
+                <ul class="hidden">
+                    <li class="file">sample_video.mp4</li>
+                </ul>
+            </li>
+            <li class="folder">kling_v2a
+                <ul class="hidden">
+                    <li class="file">sample_video.mp4</li>
+                </ul>
+            </li>
+            <li class="folder">kling_ymj
+                <ul class="hidden">
+                    <li class="file">sample_video.mp4</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li class="folder">spoof_audio
+        <ul class="hidden">
+            <li class="folder">audiocraft
+                <ul class="hidden">
+                    <li class="file">sample_audio.wav</li>
+                </ul>
+            </li>
+            <li class="folder">ldm1
+                <ul class="hidden">
+                    <li class="file">sample_audio.wav</li>
+                </ul>
+            </li>
+            <li class="folder">ldm2
+                <ul class="hidden">
+                    <li class="file">sample_audio.wav</li>
+                </ul>
+            </li>
+            <li class="folder">v2a
+                <ul class="hidden">
+                    <li class="file">sample_audio.wav</li>
+                </ul>
+            </li>
+            <li class="folder">ymj
+                <ul class="hidden">
+                    <li class="file">sample_audio.wav</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+<script>
+    document.querySelectorAll('.folder').forEach(folder => {
+        folder.addEventListener('click', () => {
+            const sublist = folder.querySelector('ul');
+            if (sublist) sublist.classList.toggle('hidden');
+        });
+    });
+</script>
+</body>
+</html>
