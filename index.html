@@ -3,58 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Enhanced File Structure</title>
+<title>Complete File Structure</title>
 <style>
     body { font-family: Arial, sans-serif; background-color: #f0f0f0; padding: 20px; }
     ul { list-style-type: none; padding-left: 20px; }
-    .folder { cursor: pointer; margin-top: 10px; color: #333; }
-    .file { margin-left: 20px; }
-    .hidden { display: none; }
+    .file { margin-bottom: 20px; }
     audio, video { display: block; margin: 5px 0; width: 80%; max-width: 600px; }
     .container { background-color: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
 </style>
 </head>
 <body>
 <div class="container">
-<h2>Enhanced File Structure</h2>
+<h2>Complete File Structure</h2>
 <ul>
-    <li class="folder">bonafide_audio
-        <ul class="hidden">
-            <li class="file"><audio controls src="bonafide_audio/sample_audio.wav"></audio></li>
-        </ul>
-    </li>
-    <li class="folder">bonafide_video
-        <ul class="hidden">
-            <li class="file"><video controls src="bonafide_video/sample_video.mp4"></video></li>
-        </ul>
-    </li>
-    <li class="folder">kling_fake_video_fake_audio
-        <ul class="hidden">
-            <li class="folder">kling_audiocraft
-                <ul class="hidden">
-                    <li class="file"><video controls src="kling_fake_video_fake_audio/kling_audiocraft/sample_video.mp4"></video></li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-    <li class="folder">spoof_audio
-        <ul class="hidden">
-            <li class="folder">audiocraft
-                <ul class="hidden">
-                    <li class="file"><audio controls src="spoof_audio/audiocraft/sample_audio.wav"></audio></li>
-                </ul>
-            </li>
-        </ul>
-    </li>
+    <li class="file"><strong>bonafide_audio:</strong> <audio controls src="bonafide_audio/sample_audio.wav"></audio></li>
+    <li class="file"><strong>bonafide_video:</strong> <video controls src="bonafide_video/sample_video.mp4"></video></li>
+    <li class="file"><strong>kling_fake_video_fake_audio:</strong></li>
+    <ul>
+        <li class="file"><video controls src="kling_fake_video_fake_audio/kling_audiocraft/sample_video.mp4"></video></li>
+        <li class="file"><video controls src="kling_fake_video_fake_audio/kling_audioldm1/sample_video.mp4"></video></li>
+        <li class="file"><video controls src="kling_fake_video_fake_audio/kling_audioldm2/sample_video.mp4"></video></li>
+        <li class="file"><video controls src="kling_fake_video_fake_audio/kling_v2a/sample_video.mp4"></video></li>
+        <li class="file"><video controls src="kling_fake_video_fake_audio/kling_ymj/sample_video.mp4"></video></li>
+    </ul>
+    <li class="file"><strong>spoof_audio:</strong></li>
+    <ul>
+        <li class="file"><audio controls src="spoof_audio/audiocraft/sample_audio.wav"></audio></li>
+        <li class="file"><audio controls src="spoof_audio/ldm1/sample_audio.wav"></audio></li>
+        <li class="file"><audio controls src="spoof_audio/ldm2/sample_audio.wav"></audio></li>
+        <li class="file"><audio controls src="spoof_audio/v2a/sample_audio.wav"></audio></li>
+        <li class="file"><audio controls src="spoof_audio/ymj/sample_audio.wav"></audio></li>
+    </ul>
 </ul>
 </div>
-<script>
-    document.querySelectorAll('.folder').forEach(folder => {
-        folder.addEventListener('click', () => {
-            const sublist = folder.querySelector('ul');
-            if (sublist) sublist.classList.toggle('hidden');
-        });
-    });
-</script>
 </body>
 </html>
