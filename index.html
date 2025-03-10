@@ -3,52 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>File Structure</title>
+<title>Enhanced File Structure</title>
 <style>
-    ul { list-style-type: none; }
-    .folder { cursor: pointer; }
+    body { font-family: Arial, sans-serif; background-color: #f0f0f0; padding: 20px; }
+    ul { list-style-type: none; padding-left: 20px; }
+    .folder { cursor: pointer; margin-top: 10px; color: #333; }
     .file { margin-left: 20px; }
     .hidden { display: none; }
+    audio, video { display: block; margin: 5px 0; width: 80%; max-width: 600px; }
+    .container { background-color: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
 </style>
 </head>
 <body>
-<h2>File Structure</h2>
+<div class="container">
+<h2>Enhanced File Structure</h2>
 <ul>
     <li class="folder">bonafide_audio
         <ul class="hidden">
-            <li class="file">sample_audio.wav</li>
+            <li class="file"><audio controls src="bonafide_audio/sample_audio.wav"></audio></li>
         </ul>
     </li>
     <li class="folder">bonafide_video
         <ul class="hidden">
-            <li class="file">sample_video.mp4</li>
+            <li class="file"><video controls src="bonafide_video/sample_video.mp4"></video></li>
         </ul>
     </li>
     <li class="folder">kling_fake_video_fake_audio
         <ul class="hidden">
             <li class="folder">kling_audiocraft
                 <ul class="hidden">
-                    <li class="file">sample_video.mp4</li>
-                </ul>
-            </li>
-            <li class="folder">kling_audioldm1
-                <ul class="hidden">
-                    <li class="file">sample_video.mp4</li>
-                </ul>
-            </li>
-            <li class="folder">kling_audioldm2
-                <ul class="hidden">
-                    <li class="file">sample_video.mp4</li>
-                </ul>
-            </li>
-            <li class="folder">kling_v2a
-                <ul class="hidden">
-                    <li class="file">sample_video.mp4</li>
-                </ul>
-            </li>
-            <li class="folder">kling_ymj
-                <ul class="hidden">
-                    <li class="file">sample_video.mp4</li>
+                    <li class="file"><video controls src="kling_fake_video_fake_audio/kling_audiocraft/sample_video.mp4"></video></li>
                 </ul>
             </li>
         </ul>
@@ -57,32 +41,13 @@
         <ul class="hidden">
             <li class="folder">audiocraft
                 <ul class="hidden">
-                    <li class="file">sample_audio.wav</li>
-                </ul>
-            </li>
-            <li class="folder">ldm1
-                <ul class="hidden">
-                    <li class="file">sample_audio.wav</li>
-                </ul>
-            </li>
-            <li class="folder">ldm2
-                <ul class="hidden">
-                    <li class="file">sample_audio.wav</li>
-                </ul>
-            </li>
-            <li class="folder">v2a
-                <ul class="hidden">
-                    <li class="file">sample_audio.wav</li>
-                </ul>
-            </li>
-            <li class="folder">ymj
-                <ul class="hidden">
-                    <li class="file">sample_audio.wav</li>
+                    <li class="file"><audio controls src="spoof_audio/audiocraft/sample_audio.wav"></audio></li>
                 </ul>
             </li>
         </ul>
     </li>
 </ul>
+</div>
 <script>
     document.querySelectorAll('.folder').forEach(folder => {
         folder.addEventListener('click', () => {
