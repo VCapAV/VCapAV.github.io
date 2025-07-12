@@ -18,7 +18,28 @@
       text-align: center;
       font-size: 2.4rem;
       color: #2a2a2a;
-      margin-bottom: 50px;
+      margin-bottom: 20px;
+    }
+
+    .info-box {
+      max-width: 960px;
+      margin: 0 auto 40px auto;
+      background: #e9f4ff;
+      border-left: 6px solid #007acc;
+      border-radius: 10px;
+      padding: 20px 30px;
+      font-size: 0.95rem;
+      color: #2b2b2b;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+
+    .info-box a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    .info-box a:hover {
+      text-decoration: underline;
     }
 
     .sample-group {
@@ -83,10 +104,17 @@
 
   <h1>🎧 VCapAV Dataset: Audio-Visual Deepfake Detection</h1>
 
+  <div class="info-box">
+    <p><strong>📄 Citation:</strong><br>
+    Yuxi Wang, Yikang Wang, Qishan Zhang, Hiromitsu Nishizaki, Ming Li.<br>
+    <em>“VCapAV: A Video-Caption Based Audio-Visual Deepfake Detection Dataset”</em>, Interspeech 2025.</p>
+    <p><strong>📘 PDF:</strong> <a href="https://sites.duke.edu/dkusmiip/files/2025/05/VCapAV-A-Video-Caption-Based-Audio-Visual-Deepfake-Detection-Dataset.pdf" target="_blank">https://sites.duke.edu/dkusmiip/.../VCapAV-...Dataset.pdf</a></p>
+    <p><strong>🔗 DOI:</strong> <a href="https://doi.org/10.5281/zenodo.15498946" target="_blank">https://doi.org/10.5281/zenodo.15498946</a></p>
+  </div>
+
   <!-- Sample Group 1 -->
   <div class="sample-group">
     <div class="sample-title">Sample: VpZ7mkQBLrY_000065</div>
-
     <h2>🔊 Audio</h2>
     <div class="media-grid">
       <div class="card"><h4>Bonafide</h4><audio controls src="VpZ7mkQBLrY_000065_bonafide.wav"></audio></div>
@@ -107,7 +135,6 @@
   <!-- Sample Group 2 -->
   <div class="sample-group">
     <div class="sample-title">Sample: AmipJSk2B-o_000005</div>
-
     <h2>🔊 Audio</h2>
     <div class="media-grid">
       <div class="card"><h4>Bonafide</h4><audio controls src="AmipJSk2B-o_000005_bonafide.wav"></audio></div>
