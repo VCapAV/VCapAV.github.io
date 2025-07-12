@@ -41,32 +41,36 @@
       font-size: 0.9rem;
     }
 
+      .button-group {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap; /* 保证一排显示 */
+      gap: 8px;
+    }
+    
     .button-link {
-      display: inline-block;
-      background-color: #3a6ea5; /* 柔和蓝 */
+      flex: 1;
+      min-width: 0;
+      text-align: center;
+      background-color: #3a6ea5;
       color: white;
-      padding: 8px 14px;
+      padding: 6px 10px;
       border-radius: 5px;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       text-decoration: none;
       transition: background 0.2s ease-in-out, transform 0.15s ease-in-out;
+      white-space: nowrap;
     }
-  
+    
     .button-link i {
-      margin-right: 6px;
-      font-size: 0.9rem;
+      margin-right: 5px;
+      font-size: 0.85rem;
     }
-  
+    
     .button-link:hover {
       background-color: #2f5d8a;
       transform: translateY(-1px);
-    }
-  
-    .button-group {
-      margin-top: 15px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
     }
 
     .sample-group {
