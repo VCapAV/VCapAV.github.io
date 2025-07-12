@@ -7,6 +7,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Roboto', sans-serif;
       background: #f5f7fa;
@@ -15,7 +19,7 @@
       color: #333;
     }
 
-    h1 {
+    header h1 {
       text-align: center;
       font-size: 2.4rem;
       color: #2a2a2a;
@@ -30,12 +34,14 @@
       gap: 20px;
     }
 
-    .info-box {
-      background: #fdfdfd;
-      border-left: 6px solid #b5a642;
-      border-radius: 10px;
-      padding: 20px 30px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    .box-card {
+      background: #ffffff;
+      border-left: 6px solid #4b92c7;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+      margin: 40px auto;
+      max-width: 1200px;
     }
 
     .bibtex-box {
@@ -47,23 +53,22 @@
       font-size: 0.9rem;
       white-space: pre-wrap;
       overflow-x: auto;
+      display: none;
     }
 
     .button-group {
       margin-top: 15px;
       display: flex;
-      justify-content: space-between;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       gap: 8px;
     }
 
     .button-link {
       flex: 1;
-      min-width: 0;
       text-align: center;
       background-color: #3a6ea5;
       color: white;
-      padding: 6px 10px;
+      padding: 8px 12px;
       border-radius: 5px;
       font-size: 0.82rem;
       text-decoration: none;
@@ -79,16 +84,6 @@
     .button-link:hover {
       background-color: #2f5d8a;
       transform: translateY(-1px);
-    }
-
-    .sample-group {
-      background: #ffffff;
-      border-radius: 15px;
-      padding: 25px;
-      margin: 40px auto;
-      max-width: 1200px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-      border-left: 6px solid #4b92c7;
     }
 
     .sample-title {
@@ -108,7 +103,7 @@
 
     .media-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
     }
 
@@ -139,28 +134,11 @@
       border: 1px solid #ddd;
     }
 
-    .footer-box {
-      max-width: 800px;
-      margin: 60px auto 40px auto;
-      background: #fdfdfd;
-      border-left: 6px solid #b5a642;
-      border-radius: 10px;
-      padding: 20px 30px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .footer-box h3 {
-      margin-top: 0;
-      font-size: 1.2rem;
-      color: #2a2a2a;
-      margin-bottom: 10px;
-    }
-
     footer {
       text-align: center;
       font-size: 0.9rem;
       color: #666;
-      margin-top: 40px;
+      margin-top: 60px;
     }
 
     footer a {
@@ -171,15 +149,36 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    @media (max-width: 600px) {
+      .button-group {
+        flex-direction: column;
+      }
+
+      .button-link {
+        width: 100%;
+      }
+    }
   </style>
+  <script>
+    function toggleBibtex() {
+      const box = document.getElementById("bibtex");
+      box.style.display = box.style.display === "none" ? "block" : "none";
+    }
+  </script>
 </head>
 <body>
 
-  <h1>🎧 VCapAV Dataset: Audio-Visual Deepfake Detection</h1>
+  <header>
+    <h1>🎧 VCapAV Dataset: Audio-Visual Deepfake Detection</h1>
+  </header>
 
   <div class="info-container">
-    <div class="info-box">
-      <div class="bibtex-box">
+    <div class="box-card">
+      <button onclick="toggleBibtex()" class="button-link" style="width: fit-content; margin-bottom: 10px;">
+        <i class="fas fa-code"></i> Toggle BibTeX
+      </button>
+      <div id="bibtex" class="bibtex-box">
 @inproceedings{wang2025vcapav,
   title={VCapAV: A Video-Caption Based Audio-Visual Deepfake Detection Dataset},
   author={Wang, Yuxi and Wang, Yikang and Zhang, Qishan and Nishizaki, Hiromitsu and Li, Ming},
@@ -204,14 +203,13 @@
     </div>
   </div>
 
-  <!-- Sample Group 1 -->
-  <div class="sample-group">
+  <section class="box-card">
     <div class="sample-title">Sample 1: VpZ7mkQBLrY_000065</div>
     <h2>📝 Video Caption</h2>
     <p>popcorn is being cooked</p>
     <h2>🔊 Audio</h2>
     <div class="media-grid">
-      <div class="card"><h4>Bonafide</h4><audio controls src="VpZ7mkQBLrY_000065_bonafide.wav"></audio></div>
+      <div class="card"><h4>Bonafide</h4><audio controls src="VpZ7mkQBLrY_000065_bonafide.wav">Your browser does not support audio.</audio></div>
       <div class="card"><h4>AudioCraft</h4><audio controls src="VpZ7mkQBLrY_000065_craft.wav"></audio></div>
       <div class="card"><h4>AudioLDM1</h4><audio controls src="VpZ7mkQBLrY_000065_ldm1.wav"></audio></div>
       <div class="card"><h4>AudioLDM2</h4><audio controls src="VpZ7mkQBLrY_000065_ldm2.wav"></audio></div>
@@ -220,13 +218,12 @@
     </div>
     <h2>🎥 Video</h2>
     <div class="media-grid">
-      <div class="card"><h4>Bonafide</h4><video controls src="VpZ7mkQBLrY_000065_bonafide.mp4"></video></div>
-      <div class="card"><h4>Spoof (Kling)</h4><video controls src="VpZ7mkQBLrY_000065_kling.mp4"></video></div>
+      <div class="card"><h4>Bonafide</h4><video controls src="VpZ7mkQBLrY_000065_bonafide.mp4" loading="lazy"></video></div>
+      <div class="card"><h4>Spoof (Kling)</h4><video controls src="VpZ7mkQBLrY_000065_kling.mp4" loading="lazy"></video></div>
     </div>
-  </div>
+  </section>
 
-  <!-- Sample Group 2 -->
-  <div class="sample-group">
+  <section class="box-card">
     <div class="sample-title">Sample 2: Gdo_f-4odEY_000054</div>
     <h2>📝 Video Caption</h2>
     <p>two women playing racquetball</p>
@@ -241,15 +238,20 @@
     </div>
     <h2>🎥 Video</h2>
     <div class="media-grid">
-      <div class="card"><h4>Bonafide</h4><video controls src="Gdo_f-4odEY_000054_bonafide.mp4"></video></div>
-      <div class="card"><h4>Spoof (Kling)</h4><video controls src="Gdo_f-4odEY_000054_kling.mp4"></video></div>
+      <div class="card"><h4>Bonafide</h4><video controls src="Gdo_f-4odEY_000054_bonafide.mp4" loading="lazy"></video></div>
+      <div class="card"><h4>Spoof (Kling)</h4><video controls src="Gdo_f-4odEY_000054_kling.mp4" loading="lazy"></video></div>
     </div>
-  </div>
-
+  </section>
 
   <footer>
-    <p>© 2025 VCapAV Research Group | <a href="mailto:contact@vcapav.org">contact@vcapav.org</a></p>
-    <p><a href="https://github.com/VCapAV/VCapAV.github.io" target="_blank">GitHub Repository</a></p>
+    <p>© 2025 VCapAV Research Group |
+      <a href="mailto:contact@vcapav.org"><i class="fas fa-envelope"></i> contact@vcapav.org</a>
+    </p>
+    <p>
+      <a href="https://github.com/VCapAV/VCapAV.github.io" target="_blank">
+        <i class="fab fa-github"></i> GitHub Repository
+      </a>
+    </p>
   </footer>
 
 </body>
