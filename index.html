@@ -21,20 +21,28 @@
       margin-bottom: 50px;
     }
 
-    .section {
+    .sample-group {
       background: #ffffff;
       border-radius: 15px;
-      padding: 30px;
-      margin: 30px auto;
+      padding: 25px;
+      margin: 40px auto;
       max-width: 1200px;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+      border-left: 6px solid #007acc;
+    }
+
+    .sample-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #007acc;
+      margin-bottom: 20px;
     }
 
     h2 {
-      font-size: 1.6rem;
-      color: #007acc;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #e0e0e0;
+      font-size: 1.2rem;
+      color: #444;
+      margin: 30px 0 15px;
+      border-bottom: 1px solid #ccc;
       padding-bottom: 5px;
     }
 
@@ -69,59 +77,51 @@
       border-radius: 8px;
       border: 1px solid #ddd;
     }
-
-    @media (max-width: 768px) {
-      body {
-        padding: 20px 10px;
-      }
-    }
   </style>
 </head>
 <body>
 
   <h1>🎧 VCapAV Dataset: Audio-Visual Deepfake Detection</h1>
 
-  <div class="section">
-    <h2>🔊 Audio Samples</h2>
+  <!-- Sample Group 1 -->
+  <div class="sample-group">
+    <div class="sample-title">Sample: VpZ7mkQBLrY_000065</div>
+
+    <h2>🔊 Audio</h2>
     <div class="media-grid">
-      <div class="card">
-        <h4>Bonafide</h4>
-        <audio controls src="VpZ7mkQBLrY_000065_bonafide.wav"></audio>
-      </div>
-      <div class="card">
-        <h4>AudioCraft</h4>
-        <audio controls src="VpZ7mkQBLrY_000065_craft.wav"></audio>
-      </div>
-      <div class="card">
-        <h4>AudioLDM1</h4>
-        <audio controls src="VpZ7mkQBLrY_000065_ldm1.wav"></audio>
-      </div>
-      <div class="card">
-        <h4>AudioLDM2</h4>
-        <audio controls src="VpZ7mkQBLrY_000065_ldm2.wav"></audio>
-      </div>
-      <div class="card">
-        <h4>V2A-MLP</h4>
-        <audio controls src="VpZ7mkQBLrY_000065_mlp.wav"></audio>
-      </div>
-      <div class="card">
-        <h4>V2A-Mapper</h4>
-        <audio controls src="VpZ7mkQBLrY_000065_mapper.wav"></audio>
-      </div>
+      <div class="card"><h4>Bonafide</h4><audio controls src="VpZ7mkQBLrY_000065_bonafide.wav"></audio></div>
+      <div class="card"><h4>AudioCraft</h4><audio controls src="VpZ7mkQBLrY_000065_craft.wav"></audio></div>
+      <div class="card"><h4>AudioLDM1</h4><audio controls src="VpZ7mkQBLrY_000065_ldm1.wav"></audio></div>
+      <div class="card"><h4>AudioLDM2</h4><audio controls src="VpZ7mkQBLrY_000065_ldm2.wav"></audio></div>
+      <div class="card"><h4>V2A-MLP</h4><audio controls src="VpZ7mkQBLrY_000065_mlp.wav"></audio></div>
+      <div class="card"><h4>V2A-Mapper</h4><audio controls src="VpZ7mkQBLrY_000065_mapper.wav"></audio></div>
+    </div>
+
+    <h2>🎥 Video</h2>
+    <div class="media-grid">
+      <div class="card"><h4>Bonafide</h4><video controls src="VpZ7mkQBLrY_000065_bonafide_fixed.mp4"></video></div>
+      <div class="card"><h4>Spoof (Kling)</h4><video controls src="VpZ7mkQBLrY_000065_kling.mp4"></video></div>
     </div>
   </div>
 
-  <div class="section">
-    <h2>🎥 Video Samples</h2>
+  <!-- Sample Group 2 -->
+  <div class="sample-group">
+    <div class="sample-title">Sample: 8_2zsOKcxK0_000023</div>
+
+    <h2>🔊 Audio</h2>
     <div class="media-grid">
-      <div class="card">
-        <h4>Bonafide</h4>
-        <video controls src="VpZ7mkQBLrY_000065_bonafide.mp4"></video>
-      </div>
-      <div class="card">
-        <h4>Spoof (Kling)</h4>
-        <video controls src="VpZ7mkQBLrY_000065_kling.mp4"></video>
-      </div>
+      <div class="card"><h4>Bonafide</h4><audio controls src="8_2zsOKcxK0_000023_bonafide.wav"></audio></div>
+      <div class="card"><h4>AudioCraft</h4><audio controls src="8_2zsOKcxK0_000023_craft.wav"></audio></div>
+      <div class="card"><h4>AudioLDM1</h4><audio controls src="8_2zsOKcxK0_000023_ldm1.wav"></audio></div>
+      <div class="card"><h4>AudioLDM2</h4><audio controls src="8_2zsOKcxK0_000023_ldm2.wav"></audio></div>
+      <div class="card"><h4>V2A-MLP</h4><audio controls src="8_2zsOKcxK0_000023_mlp.wav"></audio></div>
+      <div class="card"><h4>V2A-Mapper</h4><audio controls src="8_2zsOKcxK0_000023_mapper.wav"></audio></div>
+    </div>
+
+    <h2>🎥 Video</h2>
+    <div class="media-grid">
+      <div class="card"><h4>Bonafide</h4><video controls src="8_2zsOKcxK0_000023_bonafide_fixed.mp4"></video></div>
+      <div class="card"><h4>Spoof (Kling)</h4><video controls src="8_2zsOKcxK0_000023_kling.mp4"></video></div>
     </div>
   </div>
 
