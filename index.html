@@ -7,18 +7,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
+    :root {
+      --bg: #f5f7fa;
+      --text: #333;
+      --card-bg: #fff;
+      --border: #e2e2e2;
+      --link: #4b92c7;
+      --highlight: #3a6ea5;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1e1e1e;
+        --text: #e0e0e0;
+        --card-bg: #2a2a2a;
+        --border: #444;
+        --link: #86b7ff;
+        --highlight: #508cd0;
+      }
+    }
+
     body {
       font-family: 'Roboto', sans-serif;
-      background: #f5f7fa;
+      background: var(--bg);
       margin: 0;
       padding: 40px 20px;
-      color: #333;
+      color: var(--text);
     }
 
     h1 {
       text-align: center;
       font-size: 2.4rem;
-      color: #2a2a2a;
+      color: var(--text);
       margin-bottom: 30px;
     }
 
@@ -31,7 +51,7 @@
     }
 
     .info-box {
-      background: #fdfdfd;
+      background: var(--card-bg);
       border-left: 6px solid #b5a642;
       border-radius: 10px;
       padding: 20px 30px;
@@ -61,7 +81,7 @@
       flex: 1;
       min-width: 0;
       text-align: center;
-      background-color: #3a6ea5;
+      background-color: var(--highlight);
       color: white;
       padding: 6px 10px;
       border-radius: 5px;
@@ -69,6 +89,7 @@
       text-decoration: none;
       transition: background 0.2s ease-in-out, transform 0.15s ease-in-out;
       white-space: nowrap;
+      outline: none;
     }
 
     .button-link i {
@@ -81,26 +102,31 @@
       transform: translateY(-1px);
     }
 
+    .button-link:focus-visible {
+      outline: 2px dashed var(--link);
+      outline-offset: 3px;
+    }
+
     .sample-group {
-      background: #ffffff;
+      background: var(--card-bg);
       border-radius: 15px;
       padding: 25px;
       margin: 40px auto;
       max-width: 1200px;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-      border-left: 6px solid #4b92c7;
+      border-left: 6px solid var(--link);
     }
 
     .sample-title {
       font-size: 1.4rem;
       font-weight: bold;
-      color: #4b92c7;
+      color: var(--link);
       margin-bottom: 20px;
     }
 
     h2 {
       font-size: 1.2rem;
-      color: #444;
+      color: var(--text);
       margin: 30px 0 15px;
       border-bottom: 1px solid #ccc;
       padding-bottom: 5px;
@@ -113,23 +139,24 @@
     }
 
     .card {
-      background: #fefefe;
-      border: 1px solid #e2e2e2;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
       border-radius: 12px;
       padding: 16px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
-      transition: transform 0.2s ease-in-out;
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     }
 
     .card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     }
 
     .card h4 {
       margin-top: 0;
       margin-bottom: 10px;
       font-size: 1.05rem;
-      color: #444;
+      color: var(--text);
     }
 
     audio, video {
@@ -139,23 +166,6 @@
       border: 1px solid #ddd;
     }
 
-    .footer-box {
-      max-width: 800px;
-      margin: 60px auto 40px auto;
-      background: #fdfdfd;
-      border-left: 6px solid #b5a642;
-      border-radius: 10px;
-      padding: 20px 30px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .footer-box h3 {
-      margin-top: 0;
-      font-size: 1.2rem;
-      color: #2a2a2a;
-      margin-bottom: 10px;
-    }
-
     .social-footer {
       margin-top: 40px;
       text-align: center;
@@ -163,7 +173,7 @@
 
     .social-footer p {
       margin-bottom: 10px;
-      color: #444;
+      color: var(--text);
     }
 
     .social-icons {
@@ -188,7 +198,7 @@
     }
 
     .social-icons a:hover {
-      background-color: #4b92c7;
+      background-color: var(--highlight);
       color: #fff;
       transform: scale(1.1);
     }
@@ -201,7 +211,7 @@
     }
 
     footer a {
-      color: #4b92c7;
+      color: var(--link);
       text-decoration: none;
     }
 
@@ -283,11 +293,14 @@
     </div>
   </div>
 
+<!-- 页面结构保持不变，这里省略中间内容，只展示底部新增部分 -->
+
   <!-- Social Footer -->
   <div class="social-footer">
+    <p>Connect with us:</p>
     <div class="social-icons">
       <a href="https://github.com/VCapAV" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-      <a href="mailto:wa0009xi@e.ntu.edu.sg" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      <a href="mailto:contact@vcapav.org" aria-label="Email"><i class="fas fa-envelope"></i></a>
     </div>
   </div>
 
