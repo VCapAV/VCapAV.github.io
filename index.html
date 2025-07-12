@@ -36,19 +36,27 @@
       border-radius: 10px;
       padding: 20px 30px;
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-      white-space: pre-wrap;
-      font-family: 'Courier New', monospace;
-      font-size: 0.9rem;
     }
 
-      .button-group {
+    .bibtex-box {
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+
+    .button-group {
       margin-top: 15px;
       display: flex;
       justify-content: space-between;
-      flex-wrap: nowrap; /* 保证一排显示 */
+      flex-wrap: nowrap;
       gap: 8px;
     }
-    
+
     .button-link {
       flex: 1;
       min-width: 0;
@@ -62,12 +70,12 @@
       transition: background 0.2s ease-in-out, transform 0.15s ease-in-out;
       white-space: nowrap;
     }
-    
+
     .button-link i {
       margin-right: 5px;
       font-size: 0.85rem;
     }
-    
+
     .button-link:hover {
       background-color: #2f5d8a;
       transform: translateY(-1px);
@@ -171,21 +179,26 @@
 
   <div class="info-container">
     <div class="info-box">
+      <div class="bibtex-box">
 @inproceedings{wang2025vcapav,
   title={VCapAV: A Video-Caption Based Audio-Visual Deepfake Detection Dataset},
   author={Wang, Yuxi and Wang, Yikang and Zhang, Qishan and Nishizaki, Hiromitsu and Li, Ming},
   booktitle={Interspeech},
   year={2025}
 }
+      </div>
       <div class="button-group">
         <a class="button-link" href="https://sites.duke.edu/dkusmiip/files/2025/05/VCapAV-A-Video-Caption-Based-Audio-Visual-Deepfake-Detection-Dataset.pdf" target="_blank">
-          <i class="fas fa-file-pdf"></i> Download PDF
+          <i class="fas fa-file-pdf"></i> PDF
         </a>
         <a class="button-link" href="https://doi.org/10.5281/zenodo.15498946" target="_blank">
-          <i class="fas fa-database"></i> View DOI on Zenodo
+          <i class="fas fa-database"></i> DOI
         </a>
         <a class="button-link" href="https://github.com/VCapAV/VCapAV.github.io/blob/main/license.txt" target="_blank">
-          <i class="fas fa-scroll"></i> View License
+          <i class="fas fa-scroll"></i> License
+        </a>
+        <a class="button-link" href="https://github.com/VCapAV/VCapAV-Code" target="_blank">
+          <i class="fas fa-code"></i> Code
         </a>
       </div>
     </div>
@@ -232,6 +245,7 @@
       <div class="card"><h4>Spoof (Kling)</h4><video controls src="Gdo_f-4odEY_000054_kling.mp4"></video></div>
     </div>
   </div>
+
 
   <footer>
     <p>© 2025 VCapAV Research Group | <a href="mailto:contact@vcapav.org">contact@vcapav.org</a></p>
