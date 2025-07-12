@@ -22,6 +22,24 @@
       margin-bottom: 30px;
     }
 
+    nav {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .nav-link {
+      display: inline-block;
+      margin: 0 10px;
+      font-size: 1rem;
+      color: #4b92c7;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-link:hover {
+      text-decoration: underline;
+    }
+
     .info-container {
       max-width: 800px;
       margin: 0 auto 50px auto;
@@ -43,64 +61,6 @@
       font-size: 1.2rem;
       color: #2a2a2a;
       margin-bottom: 10px;
-    }
-
-    .sample-group {
-      background: #ffffff;
-      border-radius: 15px;
-      padding: 25px;
-      margin: 40px auto;
-      max-width: 1200px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-      border-left: 6px solid #4b92c7;
-    }
-
-    .sample-title {
-      font-size: 1.4rem;
-      font-weight: bold;
-      color: #4b92c7;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      font-size: 1.2rem;
-      color: #444;
-      margin: 30px 0 15px;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
-    }
-
-    .media-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: #fefefe;
-      border: 1px solid #e2e2e2;
-      border-radius: 12px;
-      padding: 16px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
-      transition: transform 0.2s ease-in-out;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-    }
-
-    .card h4 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 1.05rem;
-      color: #444;
-    }
-
-    audio, video {
-      width: 100%;
-      max-width: 100%;
-      border-radius: 8px;
-      border: 1px solid #ddd;
     }
 
     .button-link {
@@ -131,6 +91,7 @@
       font-family: monospace;
       font-size: 0.85rem;
       position: relative;
+      white-space: pre-wrap;
     }
 
     .copy-btn {
@@ -152,7 +113,6 @@
     }
 
     .dark-mode .info-box,
-    .dark-mode .sample-group,
     .dark-mode .bibtex-container {
       background: #2e2e2e;
       border-color: #888;
@@ -171,17 +131,40 @@
       cursor: pointer;
       z-index: 999;
     }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 60px;
+    }
+
+    footer a {
+      color: #4b92c7;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
   <button class="toggle-theme" onclick="toggleTheme()">🌓 Toggle Theme</button>
+
+  <nav>
+    <a class="nav-link" href="#">Home</a>
+    <a class="nav-link" href="#samples">Samples</a>
+    <a class="nav-link" href="https://github.com/VCapAV/VCapAV.github.io" target="_blank">GitHub</a>
+    <a class="nav-link" href="#contact">Contact</a>
+  </nav>
+
   <h1>🎧 VCapAV Dataset: Audio-Visual Deepfake Detection</h1>
 
   <div class="info-container">
     <div class="info-box">
-      <h3>Citation</h3>
-      <p>Yuxi Wang, Yikang Wang, Qishan Zhang, Hiromitsu Nishizaki, Ming Li.<br>
-      <em>“VCapAV: A Video-Caption Based Audio-Visual Deepfake Detection Dataset”</em>, Interspeech 2025.</p>
+      <h3>Resources & Citation</h3>
+
       <div class="bibtex-container" id="bibtex">
 @inproceedings{wang2025vcapav,
   title={VCapAV: A Video-Caption Based Audio-Visual Deepfake Detection Dataset},
@@ -204,7 +187,7 @@
     </div>
   </div>
 
-  <!-- Sample Group 1 -->
+    <!-- Sample Group 1 -->
   <div class="sample-group">
     <div class="sample-title">Sample 1: VpZ7mkQBLrY_000065</div>
     <h2>📝 Video Caption</h2>
@@ -245,6 +228,11 @@
       <div class="card"><h4>Spoof (Kling)</h4><video controls src="Gdo_f-4odEY_000054_kling.mp4"></video></div>
     </div>
   </div>
+
+  <footer id="contact">
+    <p>© 2025 VCapAV Research Group | <a href="mailto:contact@vcapav.org">contact@vcapav.org</a></p>
+    <p><a href="https://github.com/VCapAV/VCapAV.github.io" target="_blank">GitHub Repository</a></p>
+  </footer>
 
   <script>
     function copyBibtex() {
