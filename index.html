@@ -24,7 +24,7 @@
 
     .info-container {
       max-width: 800px;
-      margin: 0 auto 50px auto;
+      margin: 0 auto 30px auto;
       display: flex;
       flex-direction: column;
       gap: 20px;
@@ -79,6 +79,44 @@
     .button-link:hover {
       background-color: #2f5d8a;
       transform: translateY(-1px);
+    }
+
+    .sample-index {
+      background: #fdfdfd;
+      border-left: 6px solid #4b92c7;
+      border-radius: 10px;
+      padding: 20px 30px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      max-width: 800px;
+      margin: 0 auto 30px auto;
+    }
+
+    .sample-index h3 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #2a2a2a;
+    }
+
+    .sample-index ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .sample-index li {
+      margin: 8px 0;
+    }
+
+    .sample-index a {
+      text-decoration: none;
+      color: #3a6ea5;
+      font-size: 0.95rem;
+    }
+
+    .sample-index a:hover {
+      text-decoration: underline;
+      color: #2f5d8a;
     }
 
     .sample-group {
@@ -204,8 +242,16 @@
     </div>
   </div>
 
+  <div class="sample-index">
+    <h3>🔗 Sample Index</h3>
+    <ul>
+      <li><a href="#sample-1">Sample 1: VpZ7mkQBLrY_000065</a></li>
+      <li><a href="#sample-2">Sample 2: Gdo_f-4odEY_000054</a></li>
+    </ul>
+  </div>
+
   <!-- Sample Group 1 -->
-  <div class="sample-group">
+  <div class="sample-group" id="sample-1">
     <div class="sample-title">Sample 1: VpZ7mkQBLrY_000065</div>
     <h2>📝 Video Caption</h2>
     <p>popcorn is being cooked</p>
@@ -226,7 +272,7 @@
   </div>
 
   <!-- Sample Group 2 -->
-  <div class="sample-group">
+  <div class="sample-group" id="sample-2">
     <div class="sample-title">Sample 2: Gdo_f-4odEY_000054</div>
     <h2>📝 Video Caption</h2>
     <p>two women playing racquetball</p>
@@ -245,7 +291,6 @@
       <div class="card"><h4>Spoof (Kling)</h4><video controls src="Gdo_f-4odEY_000054_kling.mp4"></video></div>
     </div>
   </div>
-
 
   <footer>
     <p>© 2025 VCapAV Research Group | <a href="mailto:contact@vcapav.org">contact@vcapav.org</a></p>
