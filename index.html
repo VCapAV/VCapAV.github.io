@@ -7,10 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       font-family: 'Roboto', sans-serif;
       background: #f5f7fa;
@@ -19,7 +15,7 @@
       color: #333;
     }
 
-    header h1 {
+    h1 {
       text-align: center;
       font-size: 2.4rem;
       color: #2a2a2a;
@@ -34,14 +30,12 @@
       gap: 20px;
     }
 
-    .box-card {
-      background: #ffffff;
-      border-left: 6px solid #4b92c7;
-      border-radius: 15px;
-      padding: 25px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-      margin: 40px auto;
-      max-width: 1200px;
+    .info-box {
+      background: #fdfdfd;
+      border-left: 6px solid #b5a642;
+      border-radius: 10px;
+      padding: 20px 30px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
     }
 
     .bibtex-box {
@@ -53,22 +47,23 @@
       font-size: 0.9rem;
       white-space: pre-wrap;
       overflow-x: auto;
-      display: none;
     }
 
     .button-group {
       margin-top: 15px;
       display: flex;
-      flex-wrap: wrap;
+      justify-content: space-between;
+      flex-wrap: nowrap;
       gap: 8px;
     }
 
     .button-link {
       flex: 1;
+      min-width: 0;
       text-align: center;
       background-color: #3a6ea5;
       color: white;
-      padding: 8px 12px;
+      padding: 6px 10px;
       border-radius: 5px;
       font-size: 0.82rem;
       text-decoration: none;
@@ -84,6 +79,16 @@
     .button-link:hover {
       background-color: #2f5d8a;
       transform: translateY(-1px);
+    }
+
+    .sample-group {
+      background: #ffffff;
+      border-radius: 15px;
+      padding: 25px;
+      margin: 40px auto;
+      max-width: 1200px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+      border-left: 6px solid #4b92c7;
     }
 
     .sample-title {
@@ -103,7 +108,7 @@
 
     .media-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
     }
 
@@ -134,11 +139,65 @@
       border: 1px solid #ddd;
     }
 
+    .footer-box {
+      max-width: 800px;
+      margin: 60px auto 40px auto;
+      background: #fdfdfd;
+      border-left: 6px solid #b5a642;
+      border-radius: 10px;
+      padding: 20px 30px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .footer-box h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: #2a2a2a;
+      margin-bottom: 10px;
+    }
+
+    .social-footer {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .social-footer p {
+      margin-bottom: 10px;
+      color: #444;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #e1e7ed;
+      color: #444;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .social-icons a:hover {
+      background-color: #4b92c7;
+      color: #fff;
+      transform: scale(1.1);
+    }
+
     footer {
       text-align: center;
       font-size: 0.9rem;
       color: #666;
-      margin-top: 60px;
+      margin-top: 40px;
     }
 
     footer a {
@@ -149,36 +208,15 @@
     footer a:hover {
       text-decoration: underline;
     }
-
-    @media (max-width: 600px) {
-      .button-group {
-        flex-direction: column;
-      }
-
-      .button-link {
-        width: 100%;
-      }
-    }
   </style>
-  <script>
-    function toggleBibtex() {
-      const box = document.getElementById("bibtex");
-      box.style.display = box.style.display === "none" ? "block" : "none";
-    }
-  </script>
 </head>
 <body>
 
-  <header>
-    <h1>🎧 VCapAV Dataset: Audio-Visual Deepfake Detection</h1>
-  </header>
+  <h1>🎧 VCapAV Dataset: Audio-Visual Deepfake Detection</h1>
 
   <div class="info-container">
-    <div class="box-card">
-      <button onclick="toggleBibtex()" class="button-link" style="width: fit-content; margin-bottom: 10px;">
-        <i class="fas fa-code"></i> Toggle BibTeX
-      </button>
-      <div id="bibtex" class="bibtex-box">
+    <div class="info-box">
+      <div class="bibtex-box">
 @inproceedings{wang2025vcapav,
   title={VCapAV: A Video-Caption Based Audio-Visual Deepfake Detection Dataset},
   author={Wang, Yuxi and Wang, Yikang and Zhang, Qishan and Nishizaki, Hiromitsu and Li, Ming},
@@ -203,13 +241,14 @@
     </div>
   </div>
 
-  <section class="box-card">
+  <!-- Sample Group 1 -->
+  <div class="sample-group">
     <div class="sample-title">Sample 1: VpZ7mkQBLrY_000065</div>
     <h2>📝 Video Caption</h2>
     <p>popcorn is being cooked</p>
     <h2>🔊 Audio</h2>
     <div class="media-grid">
-      <div class="card"><h4>Bonafide</h4><audio controls src="VpZ7mkQBLrY_000065_bonafide.wav">Your browser does not support audio.</audio></div>
+      <div class="card"><h4>Bonafide</h4><audio controls src="VpZ7mkQBLrY_000065_bonafide.wav"></audio></div>
       <div class="card"><h4>AudioCraft</h4><audio controls src="VpZ7mkQBLrY_000065_craft.wav"></audio></div>
       <div class="card"><h4>AudioLDM1</h4><audio controls src="VpZ7mkQBLrY_000065_ldm1.wav"></audio></div>
       <div class="card"><h4>AudioLDM2</h4><audio controls src="VpZ7mkQBLrY_000065_ldm2.wav"></audio></div>
@@ -218,12 +257,13 @@
     </div>
     <h2>🎥 Video</h2>
     <div class="media-grid">
-      <div class="card"><h4>Bonafide</h4><video controls src="VpZ7mkQBLrY_000065_bonafide.mp4" loading="lazy"></video></div>
-      <div class="card"><h4>Spoof (Kling)</h4><video controls src="VpZ7mkQBLrY_000065_kling.mp4" loading="lazy"></video></div>
+      <div class="card"><h4>Bonafide</h4><video controls src="VpZ7mkQBLrY_000065_bonafide.mp4"></video></div>
+      <div class="card"><h4>Spoof (Kling)</h4><video controls src="VpZ7mkQBLrY_000065_kling.mp4"></video></div>
     </div>
-  </section>
+  </div>
 
-  <section class="box-card">
+  <!-- Sample Group 2 -->
+  <div class="sample-group">
     <div class="sample-title">Sample 2: Gdo_f-4odEY_000054</div>
     <h2>📝 Video Caption</h2>
     <p>two women playing racquetball</p>
@@ -238,20 +278,23 @@
     </div>
     <h2>🎥 Video</h2>
     <div class="media-grid">
-      <div class="card"><h4>Bonafide</h4><video controls src="Gdo_f-4odEY_000054_bonafide.mp4" loading="lazy"></video></div>
-      <div class="card"><h4>Spoof (Kling)</h4><video controls src="Gdo_f-4odEY_000054_kling.mp4" loading="lazy"></video></div>
+      <div class="card"><h4>Bonafide</h4><video controls src="Gdo_f-4odEY_000054_bonafide.mp4"></video></div>
+      <div class="card"><h4>Spoof (Kling)</h4><video controls src="Gdo_f-4odEY_000054_kling.mp4"></video></div>
     </div>
-  </section>
+  </div>
+
+  <!-- Social Footer -->
+  <div class="social-footer">
+    <p>Connect with us:</p>
+    <div class="social-icons">
+      <a href="https://github.com/VCapAV" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="mailto:contact@vcapav.org" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
 
   <footer>
-    <p>© 2025 VCapAV Research Group |
-      <a href="mailto:contact@vcapav.org"><i class="fas fa-envelope"></i> contact@vcapav.org</a>
-    </p>
-    <p>
-      <a href="https://github.com/VCapAV/VCapAV.github.io" target="_blank">
-        <i class="fab fa-github"></i> GitHub Repository
-      </a>
-    </p>
+    <p>© 2025 VCapAV Research Group | <a href="mailto:contact@vcapav.org">contact@vcapav.org</a></p>
+    <p><a href="https://github.com/VCapAV/VCapAV.github.io" target="_blank">GitHub Repository</a></p>
   </footer>
 
 </body>
