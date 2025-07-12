@@ -7,43 +7,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    :root {
-      --main-color: #2c8e9d;
-      --hover-color: #1f6f7d;
-    }
-
     body {
       font-family: 'Roboto', sans-serif;
       background: #f5f7fa;
       margin: 0;
-      padding: 0;
+      padding: 40px 20px;
       color: #333;
-    }
-
-    nav {
-      background-color: var(--main-color);
-      color: white;
-      padding: 12px 20px;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      font-size: 1rem;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
     }
 
     h1 {
       text-align: center;
       font-size: 2.4rem;
       color: #2a2a2a;
-      margin: 40px 0 30px;
+      margin-bottom: 30px;
     }
 
     .info-container {
@@ -52,30 +28,29 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
-      padding: 0 20px;
     }
 
     .info-box {
       background: #fdfdfd;
-      border-left: 6px solid var(--main-color);
+      border-left: 6px solid #b5a642;
       border-radius: 10px;
       padding: 20px 30px;
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
       white-space: pre-wrap;
       font-family: 'Courier New', monospace;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
 
     .button-group {
+      margin-top: 15px;
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 15px;
+      gap: 12px;
     }
 
     .button-link {
       display: inline-block;
-      background-color: var(--main-color);
+      background-color: #4b92c7;
       color: white;
       padding: 10px 16px;
       border-radius: 6px;
@@ -85,32 +60,97 @@
     }
 
     .button-link i {
-      margin-right: 8px;
+      margin-right: 6px;
     }
 
     .button-link:hover {
-      background-color: var(--hover-color);
+      background-color: #3676a3;
+    }
+
+    .sample-group {
+      background: #ffffff;
+      border-radius: 15px;
+      padding: 25px;
+      margin: 40px auto;
+      max-width: 1200px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+      border-left: 6px solid #4b92c7;
+    }
+
+    .sample-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #4b92c7;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      color: #444;
+      margin: 30px 0 15px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fefefe;
+      border: 1px solid #e2e2e2;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card h4 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+      color: #444;
+    }
+
+    audio, video {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 8px;
+      border: 1px solid #ddd;
     }
 
     .footer-box {
       max-width: 800px;
       margin: 60px auto 40px auto;
       background: #fdfdfd;
-      border-left: 6px solid var(--main-color);
+      border-left: 6px solid #b5a642;
       border-radius: 10px;
       padding: 20px 30px;
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .footer-box h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: #2a2a2a;
+      margin-bottom: 10px;
     }
 
     footer {
       text-align: center;
       font-size: 0.9rem;
       color: #666;
-      margin: 60px 20px 30px;
+      margin-top: 40px;
     }
 
     footer a {
-      color: var(--main-color);
+      color: #4b92c7;
       text-decoration: none;
     }
 
@@ -121,40 +161,31 @@
 </head>
 <body>
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="#samples">Samples</a>
-    <a href="https://github.com/VCapAV/VCapAV.github.io" target="_blank">GitHub</a>
-    <a href="mailto:contact@vcapav.org">Contact</a>
-  </nav>
-
   <h1>🎧 VCapAV Dataset: Audio-Visual Deepfake Detection</h1>
 
   <div class="info-container">
     <div class="info-box">
 @inproceedings{wang2025vcapav,
-  author    = {Yuxi Wang and Yikang Wang and Qishan Zhang and
-               Hiromitsu Nishizaki and Ming Li},
-  title     = {{VCapAV}: A Video-Caption Based Audio-Visual
-               Deepfake Detection Dataset},
-  booktitle = {Proc. Interspeech},
-  year      = {2025}
+  title={VCapAV: A Video-Caption Based Audio-Visual Deepfake Detection Dataset},
+  author={Wang, Yuxi and Wang, Yikang and Zhang, Qishan and Nishizaki, Hiromitsu and Li, Ming},
+  booktitle={Interspeech},
+  year={2025}
 }
       <div class="button-group">
         <a class="button-link" href="https://sites.duke.edu/dkusmiip/files/2025/05/VCapAV-A-Video-Caption-Based-Audio-Visual-Deepfake-Detection-Dataset.pdf" target="_blank">
-          <i class="fas fa-file-pdf"></i> PDF
+          <i class="fas fa-file-pdf"></i> Download PDF
         </a>
         <a class="button-link" href="https://doi.org/10.5281/zenodo.15498946" target="_blank">
-          <i class="fas fa-database"></i> DOI
+          <i class="fas fa-database"></i> View DOI on Zenodo
         </a>
         <a class="button-link" href="https://github.com/VCapAV/VCapAV.github.io/blob/main/license.txt" target="_blank">
-          <i class="fas fa-scroll"></i> License
+          <i class="fas fa-scroll"></i> View License
         </a>
       </div>
     </div>
   </div>
 
-    <!-- Sample Group 1 -->
+  <!-- Sample Group 1 -->
   <div class="sample-group">
     <div class="sample-title">Sample 1: VpZ7mkQBLrY_000065</div>
     <h2>📝 Video Caption</h2>
@@ -196,19 +227,9 @@
     </div>
   </div>
 
-  <div class="footer-box">
-    <h3>License</h3>
-    <p>The VCapAV Dataset is released under a <strong>Creative Commons Attribution-NonCommercial 4.0 International license</strong>.</p>
-    <a class="button-link" href="https://github.com/VCapAV/VCapAV.github.io/blob/main/license.txt" target="_blank">
-      <i class="fas fa-scroll"></i> View License
-    </a>
-  </div>
-
   <footer>
-    <p>© 2025 VCapAV Research Group |
-      <a href="mailto:contact@vcapav.org">contact@vcapav.org</a> |
-      <a href="https://github.com/VCapAV/VCapAV.github.io" target="_blank">GitHub Repository</a>
-    </p>
+    <p>© 2025 VCapAV Research Group | <a href="mailto:contact@vcapav.org">contact@vcapav.org</a></p>
+    <p><a href="https://github.com/VCapAV/VCapAV.github.io" target="_blank">GitHub Repository</a></p>
   </footer>
 
 </body>
