@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>VCapAV Dataset</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- 原样保留 -->
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -21,127 +16,76 @@
       margin-bottom: 30px;
     }
 
+    /* Info Boxes - VERTICAL layout */
     .info-container {
+      max-width: 800px;
+      margin: 0 auto 50px auto;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
       gap: 20px;
-      margin-bottom: 50px;
     }
 
     .info-box {
-      flex: 1 1 300px;
-      max-width: 600px;
-      background: #fffef4;
-      border-left: 6px solid #e6b800;
+      background: #fdfdfd;
+      border-left: 6px solid #b5a642;
       border-radius: 10px;
       padding: 20px 30px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
     }
-
-    .info-box.citation { border-left-color: #4b92c7; background: #f0f8ff; }
-    .info-box.doi { border-left-color: #5c9c7d; background: #f3fcf7; }
 
     .info-box h3 {
       margin-top: 0;
       font-size: 1.2rem;
-      color: #222;
+      color: #2a2a2a;
       margin-bottom: 10px;
     }
 
     .info-box p {
       font-size: 0.95rem;
       line-height: 1.5;
-      margin: 0 0 8px 0;
+      margin: 0;
+      word-break: break-word;
     }
 
     .info-box a {
-      color: #005caa;
+      color: #5a5a5a;
       text-decoration: none;
+      font-family: monospace;
     }
 
     .info-box a:hover {
       text-decoration: underline;
     }
 
-    .sample-group {
-      background: #ffffff;
-      border-radius: 15px;
-      padding: 25px;
-      margin: 40px auto;
-      max-width: 1200px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-      border-left: 6px solid #4b92c7;
-    }
-
-    .sample-title {
-      font-size: 1.4rem;
-      font-weight: bold;
-      color: #4b92c7;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      font-size: 1.2rem;
-      color: #444;
-      margin: 30px 0 15px;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
-    }
-
-    .media-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: #fefefe;
-      border: 1px solid #e2e2e2;
-      border-radius: 12px;
-      padding: 16px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
-      transition: transform 0.2s ease-in-out;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-    }
-
-    .card h4 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 1.05rem;
-      color: #444;
-    }
-
-    audio, video {
-      width: 100%;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-    }
+    /* Remaining CSS: sample-group, card, etc. 保持不变 */
   </style>
 </head>
 <body>
 
   <h1>🎧 VCapAV Dataset: Audio-Visual Deepfake Detection</h1>
 
-  <!-- Info Sections -->
+  <!-- Revised Info Boxes -->
   <div class="info-container">
-    <div class="info-box citation">
+    <div class="info-box">
       <h3>📄 Citation</h3>
       <p>Yuxi Wang, Yikang Wang, Qishan Zhang, Hiromitsu Nishizaki, Ming Li.<br>
       <em>“VCapAV: A Video-Caption Based Audio-Visual Deepfake Detection Dataset”</em>, Interspeech 2025.</p>
-      <p>📘 <a href="https://sites.duke.edu/dkusmiip/files/2025/05/VCapAV-A-Video-Caption-Based-Audio-Visual-Deepfake-Detection-Dataset.pdf" target="_blank">
-        View PDF</a></p>
     </div>
 
-    <div class="info-box doi">
-      <h3>🔗 Dataset DOI</h3>
+    <div class="info-box">
+      <h3>🔗 Paper PDF</h3>
+      <p><a href="https://sites.duke.edu/dkusmiip/files/2025/05/VCapAV-A-Video-Caption-Based-Audio-Visual-Deepfake-Detection-Dataset.pdf" target="_blank">
+        https://sites.duke.edu/dkusmiip/files/2025/05/VCapAV-A-Video-Caption-Based-Audio-Visual-Deepfake-Detection-Dataset.pdf</a></p>
+    </div>
+
+    <div class="info-box">
+      <h3>🧬 Dataset DOI</h3>
       <p><a href="https://doi.org/10.5281/zenodo.15498946" target="_blank">
         https://doi.org/10.5281/zenodo.15498946</a></p>
     </div>
   </div>
+
+  <!-- 以下继续 sample-group 保留 -->
 
   <!-- Sample Group 1 -->
   <div class="sample-group">
