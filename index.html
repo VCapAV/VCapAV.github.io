@@ -7,6 +7,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
+    :root {
+      --main-color: #2c8e9d;
+      --hover-color: #1f6f7d;
+    }
+
     body {
       font-family: 'Roboto', sans-serif;
       background: #f5f7fa;
@@ -16,7 +21,7 @@
     }
 
     nav {
-      background-color: #4b92c7;
+      background-color: var(--main-color);
       color: white;
       padding: 12px 20px;
       display: flex;
@@ -52,7 +57,7 @@
 
     .info-box {
       background: #fdfdfd;
-      border-left: 6px solid #b5a642;
+      border-left: 6px solid var(--main-color);
       border-radius: 10px;
       padding: 20px 30px;
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
@@ -61,73 +66,21 @@
       font-size: 0.95rem;
     }
 
-    .sample-group {
-      background: #ffffff;
-      border-radius: 15px;
-      padding: 25px;
-      margin: 40px auto;
-      max-width: 1200px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-      border-left: 6px solid #4b92c7;
-    }
-
-    .sample-title {
-      font-size: 1.4rem;
-      font-weight: bold;
-      color: #4b92c7;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      font-size: 1.2rem;
-      color: #444;
-      margin: 30px 0 15px;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
-    }
-
-    .media-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: #fefefe;
-      border: 1px solid #e2e2e2;
-      border-radius: 12px;
-      padding: 16px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
-      transition: transform 0.2s ease-in-out;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-    }
-
-    .card h4 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-size: 1.05rem;
-      color: #444;
-    }
-
-    audio, video {
-      width: 100%;
-      max-width: 100%;
-      border-radius: 8px;
-      border: 1px solid #ddd;
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 15px;
     }
 
     .button-link {
       display: inline-block;
-      background-color: #4b92c7;
+      background-color: var(--main-color);
       color: white;
       padding: 10px 16px;
       border-radius: 6px;
       font-size: 0.95rem;
       text-decoration: none;
-      margin-top: 10px;
       transition: background 0.3s ease;
     }
 
@@ -136,14 +89,14 @@
     }
 
     .button-link:hover {
-      background-color: #3676a3;
+      background-color: var(--hover-color);
     }
 
     .footer-box {
       max-width: 800px;
       margin: 60px auto 40px auto;
       background: #fdfdfd;
-      border-left: 6px solid #b5a642;
+      border-left: 6px solid var(--main-color);
       border-radius: 10px;
       padding: 20px 30px;
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
@@ -157,7 +110,7 @@
     }
 
     footer a {
-      color: #4b92c7;
+      color: var(--main-color);
       text-decoration: none;
     }
 
@@ -179,25 +132,29 @@
 
   <div class="info-container">
     <div class="info-box">
-@inproceedings{wang2025vcapav,  
-  author    = {Yuxi Wang and Yikang Wang and Qishan Zhang and  
-               Hiromitsu Nishizaki and Ming Li},  
-  title     = {{VCapAV}: A Video-Caption Based Audio-Visual  
-               Deepfake Detection Dataset},  
-  booktitle = {Proc. Interspeech},  
-  year      = {2025}  
+@inproceedings{wang2025vcapav,
+  author    = {Yuxi Wang and Yikang Wang and Qishan Zhang and
+               Hiromitsu Nishizaki and Ming Li},
+  title     = {{VCapAV}: A Video-Caption Based Audio-Visual
+               Deepfake Detection Dataset},
+  booktitle = {Proc. Interspeech},
+  year      = {2025}
 }
-    </div>
-
-    <div class="info-box">
-      <h3>Dataset DOI</h3>
-      <a class="button-link" href="https://doi.org/10.5281/zenodo.15498946" target="_blank">
-        <i class="fas fa-database"></i> View DOI on Zenodo
-      </a>
+      <div class="button-group">
+        <a class="button-link" href="https://sites.duke.edu/dkusmiip/files/2025/05/VCapAV-A-Video-Caption-Based-Audio-Visual-Deepfake-Detection-Dataset.pdf" target="_blank">
+          <i class="fas fa-file-pdf"></i> PDF
+        </a>
+        <a class="button-link" href="https://doi.org/10.5281/zenodo.15498946" target="_blank">
+          <i class="fas fa-database"></i> DOI
+        </a>
+        <a class="button-link" href="https://github.com/VCapAV/VCapAV.github.io/blob/main/license.txt" target="_blank">
+          <i class="fas fa-scroll"></i> License
+        </a>
+      </div>
     </div>
   </div>
 
-  <!-- Sample Group 1 -->
+    <!-- Sample Group 1 -->
   <div class="sample-group">
     <div class="sample-title">Sample 1: VpZ7mkQBLrY_000065</div>
     <h2>📝 Video Caption</h2>
